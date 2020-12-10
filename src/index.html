@@ -4,12 +4,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <title>Recruitment Task</title>
 </head>
 
 <body>
-    <h1>test</h1>
-    <img src="../assets/image1.jpg" alt="">
+    <header class="header">
+        <div class="wrapper">
+            <div class="header__row">
+                <div class="square"></div>
+                <nav class="nav">
+                    <ul class="nav__menu">
+                        <li class="nav__item"><a class="nav__link" href="#">O Nas</a></li>
+                        <li class="nav__item"><a class="nav__link" href="#">Aktualności</a></li>
+                        <li class="nav__item"><a class="nav__link" href="#">Koszty dostawy</a></li>
+                    </ul>
+                </nav>
+                <div class="option">
+                    <div class="option__item">
+                        <button class="option__btn">
+                            <span class="option__icon">
+                        <img src="../assets/Frame.svg" alt="">
+                    </span>
+                        </button>
+                        <button class="option__btn">
+                            <span class="option__counter">99</span>
+                            <span class="option__icon">
+                        <img src="../assets/Checklist.svg" alt="">
+                    </span>
+                        </button>
+                        <button class="option__btn">
+                            <span class="option__counter">99</span>
+                            <span class="option__icon">
+                        <img src="../assets/Group.svg" alt="">
+                    </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <form class="search">
+                <input class="search__input" placeholder="Wpisz czego szukasz" type="search"
+                    aria-label="Search through site content">
+                <button class="search__btn" type="submit" class="search__btn">
+                    Szukaj
+                </button>
+            </form>
+        </div>
+    </header>
 
     <script src="index.js"></script>
 </body>

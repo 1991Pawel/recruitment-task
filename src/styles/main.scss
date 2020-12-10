@@ -1,4 +1,125 @@
-body {
-    height: 100vh;
-    background: red;
+html, body {
+    box-sizing: border-box;
+    font-size:62.5%;
+    
+    
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  body {
+    padding:0;
+    margin:0;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.6rem;
+  }
+
+  .wrapper {
+      max-width: 1477px;
+      margin:0 auto;
+  }
+
+  .header {
+      padding: 2rem 0;
+     &__row {
+        display:flex;
+        align-items: center;
+     }
+      
+  }
+  .square {
+      height: 10rem;
+      width:10rem;
+      background:#C4C4C4;
+  }
+
+  .nav {
+    &__menu {
+        display:flex;
+        list-style:none;
+    }
+    &__item {
+        margin:0 1rem;
+    }
+
+    &__link {
+        color:#595959;
+        text-decoration: none;
+        transition: color .2s ease-in-out;
+        &:hover {
+          color  :#EA6464;
+        }
+    }
+  }
+
+.option {
+    margin-left: auto;
+    &__item {
+        display: flex;
+
+    }
+    &__btn {
+        margin-right: 1rem;
+        position: relative;
+        background: transparent;
+        border:none;
+        cursor: pointer;
+        transition: opacity .2s ease-in-out;
+        
+        &:hover {
+            opacity:.5;
+        }
+    }
+
+    &__counter {
+        font-size: 1rem;
+        bottom: .5rem;
+        right:.5rem;
+        position: absolute;
+        border-radius:50%;
+        padding:.5rem;
+
+        background:#EA6464;
+        color:#fff;
+        font-weight: bold;
+    }
 }
+
+.search {
+    margin-top:2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:0 1rem;
+    
+    height: 8rem;
+    border:1rem;
+    border:4px solid #EA6464;
+    border-radius: 5px;
+
+    &__btn {
+    height:40px;
+    min-width:124.25px;
+
+    background: #EA6464;
+    color:#fff;
+    border-radius: 5px;
+    border:none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity .2s ease-in-out;
+    
+    &:hover {
+        opacity:.5;
+    }
+    }
+    &__input {
+        border:none;
+        font-size: 14px;
+        width:100%;
+    }
+}
+  
+
+
