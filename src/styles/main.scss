@@ -6,13 +6,35 @@ html, body {
   }
   *, *:before, *:after {
     box-sizing: inherit;
+    padding:0;
+    margin:0;
   }
   
   body {
-    padding:0;
-    margin:0;
+
     font-family: 'Ubuntu', sans-serif;
     font-size: 1.6rem;
+  }
+
+  @mixin respond($breakpoint) {
+    //600px
+    @if $breakpoint == phone {
+      @media only screen and (min-width: 320px) {
+        @content;
+      }
+    }
+    //800px
+    @if $breakpoint == tablet {
+      @media only screen and (min-width: 800px) {
+        @content;
+      }
+    }
+    //1000px
+    @if $breakpoint == desktop {
+      @media only screen and (min-width: 1000px) {
+        @content;
+      }
+    }
   }
 
   .wrapper {
@@ -20,11 +42,15 @@ html, body {
       margin:0 auto;
   }
 
-  .header {
-      padding: 2rem 0;
+  .header {   
+      padding: 2rem 1rem;
      &__row {
         display:flex;
         align-items: center;
+        flex-direction: column;
+        @include respond(tablet) {
+            flex-direction: row;
+        }
      }
       
   }
@@ -38,6 +64,11 @@ html, body {
     &__menu {
         display:flex;
         list-style:none;
+        margin:2rem 0;
+        
+        @include respond(tablet) {
+            margin:0rem 5rem;
+        }
     }
     &__item {
         margin:0 1rem;
@@ -54,18 +85,29 @@ html, body {
   }
 
 .option {
-    margin-left: auto;
+        
+    @include respond(tablet) {
+        margin-left: auto;
+    }
+    
     &__item {
         display: flex;
-
     }
     &__btn {
-        margin-right: 1rem;
         position: relative;
         background: transparent;
         border:none;
         cursor: pointer;
         transition: opacity .2s ease-in-out;
+        height: 5rem;
+        width:5rem;
+        margin:0 1rem;   
+
+        @include respond(tablet) {
+            height: 6rem;
+            width:6rem;
+            margin-right: 1rem;
+        }
         
         &:hover {
             opacity:.5;
@@ -74,7 +116,7 @@ html, body {
 
     &__counter {
         font-size: 1rem;
-        bottom: .5rem;
+        bottom: -.2rem;
         right:.5rem;
         position: absolute;
         border-radius:50%;
@@ -97,6 +139,7 @@ html, body {
     border:1rem;
     border:4px solid #EA6464;
     border-radius: 5px;
+    
 
     &__btn {
     height:40px;
@@ -118,12 +161,20 @@ html, body {
         border:none;
         font-size: 14px;
         width:100%;
+        height:100%;
     }
 }
 
 .swiper-container {
-    height: 495px;
+    height: 250px;
     width: 100%;
+
+    @include respond(tablet) {
+        height: 350px;
+    }
+    @include respond(desktop) {
+        height: 495px;
+    }
 }
 
 .swiper-slide {
@@ -132,4 +183,11 @@ html, body {
      background-size:cover;
  }
 }
+
+.swiper-button-next,
+.swiper-button-prev {
+    background: transparent;
+    border:none;
+}
+
 
