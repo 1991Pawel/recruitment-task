@@ -1,5 +1,5 @@
 # recruitment-task
-Html,js,css project.
+Html,js,css slider project.
 
 ## Installation
 
